@@ -1,6 +1,6 @@
 {
-  "name": "grand-media/money",
-  "description": "GrandMedia Money",
+  "name": "grand-media/doctrine-types",
+  "description": "GrandMedia DoctrineTypes",
   "license": [
     "BSD-3-Clause",
     "GPL-2.0",
