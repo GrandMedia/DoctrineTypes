@@ -1,0 +1,36 @@
+{
+  "name": "grand-media/money",
+  "description": "GrandMedia Money",
+  "license": [
+    "BSD-3-Clause",
+    "GPL-2.0",
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Grand Media s.r.o.",
+      "email": "vesely@grandmedia.cz",
+      "homepage": "http://www.grandmedia.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "moneyphp/money": "^3.0",
+    "doctrine/dbal": "^2.5",
+    "beberlei/assert": "^2.7"
+  },
+  "require-dev": {
+    "nette/tester": "~1.7",
+    "phpstan/phpstan": "^0.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "GrandMedia\\DoctrineTypes\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "GrandMediaTests\\DoctrineTypes\\": "tests/"
+    }
+  }
+}
