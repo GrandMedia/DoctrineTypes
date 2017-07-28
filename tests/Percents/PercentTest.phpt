@@ -9,6 +9,9 @@ use Tester\TestCase;
 
 require __DIR__ . '/../bootstrap.php';
 
+/**
+ * @testCase
+ */
 final class PercentTest extends TestCase
 {
 	public function testConstructWithGoodPercents()
