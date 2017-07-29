@@ -6,16 +6,16 @@ use Assert\Assertion;
 use GrandMedia\DoctrineTypes\Email\Email;
 use InvalidArgumentException;
 use Tester\Assert;
-use Tester\TestCase;
 
 require_once __DIR__ . '/../bootstrap.php';
 
 /**
  * @testCase
  */
-final class EmailTest extends TestCase
+final class EmailTest extends \Tester\TestCase
 {
-	public function testValidation()
+
+	public function testValidation(): void
 	{
 		Assert::exception(
 			function () {
@@ -27,12 +27,13 @@ final class EmailTest extends TestCase
 		);
 	}
 
-	public function testToString()
+	public function testToString(): void
 	{
 		$email = new Email('foo@bar.cz');
 
-		Assert::equal('foo@bar.cz', (string)$email);
+		Assert::equal('foo@bar.cz', (string) $email);
 	}
+
 }
 
 (new EmailTest())->run();

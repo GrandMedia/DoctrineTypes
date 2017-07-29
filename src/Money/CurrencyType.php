@@ -4,14 +4,17 @@ namespace GrandMedia\DoctrineTypes\Money;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
-use Doctrine\DBAL\Types\Type;
 use InvalidArgumentException;
 use Money\Currency;
 
-final class CurrencyType extends Type
+final class CurrencyType extends \Doctrine\DBAL\Types\Type
 {
-	const NAME = 'currency';
 
+	public const NAME = 'currency';
+
+	/**
+	 * @param string[] $fieldDeclaration
+	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
 	{
 		return $platform->getVarcharTypeDeclarationSQL(
@@ -22,6 +25,9 @@ final class CurrencyType extends Type
 		);
 	}
 
+	/**
+	 * @param mixed $value
+	 */
 	public function convertToPHPValue($value, AbstractPlatform $platform): ?Currency
 	{
 		$value = parent::convertToPHPValue($value, $platform);
@@ -43,6 +49,9 @@ final class CurrencyType extends Type
 		return $currency;
 	}
 
+	/**
+	 * @param mixed $value
+	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
 	{
 		$value = parent::convertToDatabaseValue($value, $platform);
@@ -73,4 +82,5 @@ final class CurrencyType extends Type
 	{
 		return true;
 	}
+
 }

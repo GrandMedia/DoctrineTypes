@@ -6,6 +6,7 @@ use Assert\Assertion;
 
 final class Percent
 {
+
 	/** @var float */
 	private $value;
 
@@ -43,8 +44,9 @@ final class Percent
 		return $this->value / 100;
 	}
 
-	function __toString(): string
+	public function __toString(): string
 	{
-		return (string)$this->value;
+		return (string) $this->value;
 	}
+
 }

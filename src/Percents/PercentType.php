@@ -4,13 +4,16 @@ namespace GrandMedia\DoctrineTypes\Percents;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
-use Doctrine\DBAL\Types\Type;
 use InvalidArgumentException;
 
-final class PercentType extends Type
+final class PercentType extends \Doctrine\DBAL\Types\Type
 {
-	const NAME = 'percent';
 
+	public const NAME = 'percent';
+
+	/**
+	 * @param string[] $fieldDeclaration
+	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
 	{
 		return $platform->getDecimalTypeDeclarationSQL(
@@ -21,6 +24,9 @@ final class PercentType extends Type
 		);
 	}
 
+	/**
+	 * @param mixed $value
+	 */
 	public function convertToPHPValue($value, AbstractPlatform $platform): ?Percent
 	{
 		$value = parent::convertToPHPValue($value, $platform);
@@ -38,9 +44,13 @@ final class PercentType extends Type
 		} catch (InvalidArgumentException $exception) {
 			throw ConversionException::conversionFailed($value, self::NAME);
 		}
+
 		return $percent;
 	}
 
+	/**
+	 * @param mixed $value
+	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform): ?float
 	{
 		$value = parent::convertToDatabaseValue($value, $platform);
@@ -70,4 +80,5 @@ final class PercentType extends Type
 	{
 		return true;
 	}
+
 }

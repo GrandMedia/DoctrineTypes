@@ -3,20 +3,23 @@
 namespace GrandMedia\DoctrineTypes\Email;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\StringType;
 
-final class EmailType extends StringType
+final class EmailType extends \Doctrine\DBAL\Types\StringType
 {
-	const NAME = 'email';
+
+	public const NAME = 'email';
 
 	public function getName(): string
 	{
 		return self::NAME;
 	}
 
+	/**
+	 * @param mixed $value
+	 */
 	public function convertToPHPValue($value, AbstractPlatform $platform): ?Email
 	{
-		$value = (string)$value;
+		$value = (string) $value;
 		return $value === '' ? null : new Email($value);
 	}
 
@@ -24,4 +27,5 @@ final class EmailType extends StringType
 	{
 		return true;
 	}
+
 }

@@ -5,16 +5,16 @@ namespace GrandMediaTests\DoctrineTypes\Percents;
 use GrandMedia\DoctrineTypes\Percents\Percent;
 use InvalidArgumentException;
 use Tester\Assert;
-use Tester\TestCase;
 
 require __DIR__ . '/../bootstrap.php';
 
 /**
  * @testCase
  */
-final class PercentTest extends TestCase
+final class PercentTest extends \Tester\TestCase
 {
-	public function testConstructWithGoodPercents()
+
+	public function testConstructWithGoodPercents(): void
 	{
 		$percent = new Percent(5);
 
@@ -25,7 +25,7 @@ final class PercentTest extends TestCase
 		Assert::equal(4.67, $percent->getValue());
 	}
 
-	public function testConstructWithBadPercents()
+	public function testConstructWithBadPercents(): void
 	{
 		foreach ([-4.69, 100.1] as $percent) {
 			Assert::exception(
@@ -37,7 +37,7 @@ final class PercentTest extends TestCase
 		}
 	}
 
-	public function testAdd()
+	public function testAdd(): void
 	{
 		$percent = new Percent(50.5);
 
@@ -53,7 +53,7 @@ final class PercentTest extends TestCase
 		);
 	}
 
-	public function testSubtract()
+	public function testSubtract(): void
 	{
 		$percent = new Percent(50.5);
 
@@ -69,8 +69,7 @@ final class PercentTest extends TestCase
 		);
 	}
 
-
-	public function testEquals()
+	public function testEquals(): void
 	{
 		$percent = new Percent(50.5);
 
@@ -80,12 +79,13 @@ final class PercentTest extends TestCase
 		Assert::false($percent->equals(new Percent(51)));
 	}
 
-	public function testDecimal()
+	public function testDecimal(): void
 	{
 		$percent = new Percent(50.5);
 
 		Assert::equal(0.505, $percent->getDecimal());
 	}
+
 }
 
 (new PercentTest())->run();

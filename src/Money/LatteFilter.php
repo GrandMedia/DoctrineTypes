@@ -8,13 +8,16 @@ use Money\Money;
 
 final class LatteFilter
 {
+
 	public function __invoke(Money $money, string $lang = 'cs_CZ'): string
 	{
 		$currencies = new ISOCurrencies();
 		$formatter = new IntlMoneyFormatter(
-			new \NumberFormatter($lang, \NumberFormatter::CURRENCY), $currencies
+			new \NumberFormatter($lang, \NumberFormatter::CURRENCY),
+			$currencies
 		);
 
 		return $formatter->format($money);
 	}
+
 }

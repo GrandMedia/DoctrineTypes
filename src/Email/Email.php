@@ -6,6 +6,7 @@ use Assert\Assertion;
 
 final class Email
 {
+
 	/** @var string */
 	private $value;
 
@@ -20,4 +21,5 @@ final class Email
 	{
 		return $this->value;
 	}
+
 }
