@@ -56,7 +56,7 @@ final class CurrencyType extends \Doctrine\DBAL\Types\Type
 	{
 		$value = parent::convertToDatabaseValue($value, $platform);
 
-		if ($value === '') {
+		if ($value === '' || $value === null) {
 			return null;
 		}
 

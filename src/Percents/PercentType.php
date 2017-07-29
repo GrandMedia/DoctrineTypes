@@ -43,6 +43,8 @@ final class PercentType extends \Doctrine\DBAL\Types\Type
 			$percent = new Percent($value);
 		} catch (InvalidArgumentException $exception) {
 			throw ConversionException::conversionFailed($value, self::NAME);
+		} catch (\TypeError $exception) {
+			throw ConversionException::conversionFailed($value, self::NAME);
 		}
 
 		return $percent;
@@ -55,7 +57,7 @@ final class PercentType extends \Doctrine\DBAL\Types\Type
 	{
 		$value = parent::convertToDatabaseValue($value, $platform);
 
-		if ($value === null) {
+		if ($value === '' || $value === null) {
 			return null;
 		}
 
@@ -67,7 +69,10 @@ final class PercentType extends \Doctrine\DBAL\Types\Type
 			$percent = new Percent($value);
 		} catch (InvalidArgumentException $exception) {
 			throw ConversionException::conversionFailed($value, self::NAME);
+		} catch (\TypeError $exception) {
+			throw ConversionException::conversionFailed($value, self::NAME);
 		}
+
 		return $percent->getValue();
 	}
 
