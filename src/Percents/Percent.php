@@ -12,7 +12,7 @@ final class Percent
 
 	public function __construct(float $value)
 	{
-		$value = round($value, 2);
+		$value = \round($value, 2);
 
 		Assertion::between($value, 0.0, 100.0);
 
