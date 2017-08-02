@@ -5,6 +5,7 @@ GrandMedia/DoctrineTypes
 [![Downloads this Month](https://img.shields.io/packagist/dm/grand-media/doctrine-types.svg)](https://packagist.org/packages/grand-media/doctrine-types)
 [![Latest stable](https://img.shields.io/packagist/v/grand-media/doctrine-types.svg)](https://packagist.org/packages/grand-media/doctrine-types)
 [![Coverage Status](https://coveralls.io/repos/github/GrandMedia/DoctrineTypes/badge.svg?branch=master)](https://coveralls.io/github/GrandMedia/DoctrineTypes?branch=master)
+![PHPStan](https://img.shields.io/badge/style-level%207-brightgreen.svg?style=flat-square&label=phpstan)
 
 Installation
 ------------
