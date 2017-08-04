@@ -7,7 +7,7 @@ use GrandMedia\DoctrineTypes\Email\Email;
 use InvalidArgumentException;
 use Tester\Assert;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * @testCase

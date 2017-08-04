@@ -3,6 +3,6 @@
 	<rule ref="vendor/grand-media/coding-standard/GrandMediaCodingStandard/ruleset.xml"/>
 
 	<rule ref="PSR2.Methods.MethodDeclaration.Underscore">
-		<exclude-pattern>tests/Mocks/Platform.php</exclude-pattern>
+		<exclude-pattern>tests/DoctrineTypes/Mocks/Platform.php</exclude-pattern>
 	</rule>
 </ruleset>

@@ -8,7 +8,7 @@ use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Money\Currency;
 use Tester\Assert;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * @testCase

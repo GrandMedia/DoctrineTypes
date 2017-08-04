@@ -5,7 +5,7 @@ namespace GrandMediaTests\DoctrineTypes\Percents;
 use GrandMedia\DoctrineTypes\Percents\Percent;
 use Tester\Assert;
 
-require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/../../bootstrap.php';
 
 /**
  * @testCase
