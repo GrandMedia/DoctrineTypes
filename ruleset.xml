@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="GrandMedia/Security">
+<ruleset name="GrandMedia/DoctrineTypes">
 	<rule ref="vendor/grand-media/coding-standard/GrandMediaCodingStandard/ruleset.xml"/>
 
 	<rule ref="PSR2.Methods.MethodDeclaration.Underscore">
