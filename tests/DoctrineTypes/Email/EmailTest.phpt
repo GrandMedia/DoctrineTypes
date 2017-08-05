@@ -15,11 +15,14 @@ require_once __DIR__ . '/../../bootstrap.php';
 final class EmailTest extends \Tester\TestCase
 {
 
+	private const VALID_EMAIL = 'foo@bar.cz';
+	private const INVALID_EMAIL = 'not email';
+
 	public function testValidation(): void
 	{
 		Assert::exception(
 			function () {
-				new Email('not email');
+				new Email(self::INVALID_EMAIL);
 			},
 			InvalidArgumentException::class,
 			null,
@@ -29,9 +32,9 @@ final class EmailTest extends \Tester\TestCase
 
 	public function testToString(): void
 	{
-		$email = new Email('foo@bar.cz');
+		$email = new Email(self::VALID_EMAIL);
 
-		Assert::equal('foo@bar.cz', (string) $email);
+		Assert::equal(self::VALID_EMAIL, (string) $email);
 	}
 
 }

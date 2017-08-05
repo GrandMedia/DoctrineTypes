@@ -30,7 +30,8 @@ final class EmailTypeTest extends \Tester\TestCase
 		$type = Type::getType(EmailType::NAME);
 
 		Assert::same(self::EMAIL, (string) $type->convertToPHPValue(self::EMAIL, $platform));
-		Assert::same('', (string) $type->convertToPHPValue('', $platform));
+		Assert::type('null', $type->convertToPHPValue('', $platform));
+		Assert::type('null', $type->convertToPHPValue(null, $platform));
 	}
 
 	public function testRequiresSQLCommentHint(): void
