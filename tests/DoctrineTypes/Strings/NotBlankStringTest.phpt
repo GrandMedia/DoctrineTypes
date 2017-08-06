@@ -29,11 +29,23 @@ final class NotBlankStringTest extends \Tester\TestCase
 		);
 	}
 
+	public function testModify(): void
+	{
+		$string = new NotBlankString(self::STRING);
+
+		$modifiedString = $string->modify(
+			function (string $string) {
+				return \substr($string, 3);
+			}
+		);
+		Assert::same('lo', (string) $modifiedString);
+	}
+
 	public function testToString(): void
 	{
-		$email = new NotBlankString(self::STRING);
+		$string = new NotBlankString(self::STRING);
 
-		Assert::equal(self::STRING, (string) $email);
+		Assert::equal(self::STRING, (string) $string);
 	}
 
 }

@@ -14,9 +14,10 @@
 	},
 	"require": {
 		"php": ">=7.1",
-		"moneyphp/money": "^3.0",
+		"beberlei/assert": "^2.7",
 		"doctrine/dbal": "^2.5",
-		"beberlei/assert": "^2.7"
+		"moneyphp/money": "^3.0",
+		"nette/utils": "^2.4"
 	},
 	"require-dev": {
 		"grand-media/coding-standard": "^1.0",

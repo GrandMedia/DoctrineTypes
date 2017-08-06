@@ -3,6 +3,7 @@
 namespace GrandMedia\DoctrineTypes\Strings;
 
 use Assert\Assertion;
+use Nette\Utils\Callback;
 
 final class NotBlankString
 {
@@ -15,6 +16,11 @@ final class NotBlankString
 		Assertion::notBlank($value);
 
 		$this->value = $value;
+	}
+
+	public function modify(callable $function): self
+	{
+		return new self(Callback::invoke($function, $this->value));
 	}
 
 	public function __toString(): string
