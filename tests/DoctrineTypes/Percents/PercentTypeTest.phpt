@@ -17,6 +17,7 @@ final class PercentTypeTest extends \Tester\TestCase
 {
 
 	private const VALID_PERCENT = 50.0;
+	private const VALID_PERCENT_STRING = '50.0';
 	private const INVALID_TYPE_PERCENT = 'foo';
 	private const INVALID_VALUE_PERCENT = 150.0;
 
@@ -37,6 +38,7 @@ final class PercentTypeTest extends \Tester\TestCase
 		Assert::type('null', $type->convertToPHPValue(null, $platform));
 		Assert::same($percent, $type->convertToPHPValue($percent, $platform));
 		Assert::true($percent->equals($type->convertToPHPValue(self::VALID_PERCENT, $platform)));
+		Assert::true($percent->equals($type->convertToPHPValue(self::VALID_PERCENT_STRING, $platform)));
 	}
 
 	/**

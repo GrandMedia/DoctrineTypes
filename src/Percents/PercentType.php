@@ -39,8 +39,12 @@ final class PercentType extends \Doctrine\DBAL\Types\Type
 			return $value;
 		}
 
+		if (\is_string($value) && !\preg_match('/\d+(\.\d+)?/', $value)) {
+			throw ConversionException::conversionFailed($value, self::NAME);
+		}
+
 		try {
-			$percent = new Percent($value);
+			$percent = new Percent((float) $value);
 		} catch (InvalidArgumentException $exception) {
 			throw ConversionException::conversionFailed($value, self::NAME);
 		} catch (\TypeError $exception) {
