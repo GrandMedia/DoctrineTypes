@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMediaTests\DoctrineTypes\Email;
+namespace GrandMediaTests\DoctrineTypes;
 
 use Doctrine\DBAL\Types\Type;
-use GrandMedia\DoctrineTypes\Email\EmailType;
+use GrandMedia\DoctrineTypes\EmailType;
 use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Tester\Assert;
 
-require_once __DIR__ . '/../../bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 /**
  * @testCase
@@ -17,13 +17,6 @@ final class EmailTypeTest extends \Tester\TestCase
 
 	private const EMAIL = 'email@email.cz';
 
-	public function testGetName(): void
-	{
-		$type = Type::getType(EmailType::NAME);
-
-		Assert::same(EmailType::NAME, $type->getName());
-	}
-
 	public function testConvertToPHPValue(): void
 	{
 		$platform = new Platform();
@@ -32,6 +25,13 @@ final class EmailTypeTest extends \Tester\TestCase
 		Assert::same(self::EMAIL, (string) $type->convertToPHPValue(self::EMAIL, $platform));
 		Assert::type('null', $type->convertToPHPValue('', $platform));
 		Assert::type('null', $type->convertToPHPValue(null, $platform));
+	}
+
+	public function testGetName(): void
+	{
+		$type = Type::getType(EmailType::NAME);
+
+		Assert::same(EmailType::NAME, $type->getName());
 	}
 
 	public function testRequiresSQLCommentHint(): void

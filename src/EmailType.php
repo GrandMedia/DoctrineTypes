@@ -1,18 +1,14 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes\Email;
+namespace GrandMedia\DoctrineTypes;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use GrandMedia\VO\Email;
 
 final class EmailType extends \Doctrine\DBAL\Types\StringType
 {
 
 	public const NAME = 'email';
-
-	public function getName(): string
-	{
-		return self::NAME;
-	}
 
 	/**
 	 * @param mixed $value
@@ -20,7 +16,13 @@ final class EmailType extends \Doctrine\DBAL\Types\StringType
 	public function convertToPHPValue($value, AbstractPlatform $platform): ?Email
 	{
 		$value = (string) $value;
-		return $value === '' ? null : new Email($value);
+
+		return $value === '' ? null : Email::from($value);
+	}
+
+	public function getName(): string
+	{
+		return self::NAME;
 	}
 
 	public function requiresSQLCommentHint(AbstractPlatform $platform): bool
