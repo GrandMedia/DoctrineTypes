@@ -1,0 +1,9 @@
+<doctrine-mapping>
+	<embeddable name="GrandMedia\Files\File">
+		<field name="id" type="string"/>
+		<field name="name" type="string"/>
+		<field name="namespace" type="string"/>
+		<field name="version" type="string"/>
+		<field name="public" type="boolean"/>
+	</embeddable>
+</doctrine-mapping>
