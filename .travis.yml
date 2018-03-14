@@ -18,9 +18,6 @@ matrix:
     env: CODING_STANDARD=1
   - php: 7.1
     env: COVERAGE="--coverage coverage.xml --coverage-src src" TESTER_RUNTIME="phpdbg"
-  allow_failures:
-  - php: 7.1
-    env: COVERAGE="--coverage coverage.xml --coverage-src src" TESTER_RUNTIME="phpdbg"
 
 install:
   - if [ "$PHPSTAN" = "1" ]; then composer require --dev --no-update phpstan/phpstan-shim:^0.7; fi
