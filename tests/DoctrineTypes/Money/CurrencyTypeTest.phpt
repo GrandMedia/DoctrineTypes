@@ -1,14 +1,14 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMediaTests\DoctrineTypes;
+namespace GrandMediaTests\DoctrineTypes\Money;
 
 use Doctrine\DBAL\Types\Type;
-use GrandMedia\DoctrineTypes\CurrencyType;
+use GrandMedia\DoctrineTypes\Money\CurrencyType;
 use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Money\Currency;
 use Tester\Assert;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * @testCase

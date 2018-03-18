@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMediaTests\DoctrineTypes;
+namespace GrandMediaTests\DoctrineTypes\VO;
 
 use Doctrine\DBAL\Types\Type;
-use GrandMedia\DoctrineTypes\PasswordType;
+use GrandMedia\DoctrineTypes\VO\PasswordType;
 use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Tester\Assert;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * @testCase

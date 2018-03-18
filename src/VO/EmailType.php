@@ -1,23 +1,23 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes;
+namespace GrandMedia\DoctrineTypes\VO;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use GrandMedia\VO\Password;
+use GrandMedia\VO\Email;
 
-final class PasswordType extends \Doctrine\DBAL\Types\StringType
+final class EmailType extends \Doctrine\DBAL\Types\StringType
 {
 
-	public const NAME = 'password';
+	public const NAME = 'email';
 
 	/**
 	 * @param mixed $value
 	 */
-	public function convertToPHPValue($value, AbstractPlatform $platform): ?Password
+	public function convertToPHPValue($value, AbstractPlatform $platform): ?Email
 	{
 		$value = (string) $value;
 
-		return $value === '' ? null : Password::fromHash($value);
+		return $value === '' ? null : Email::from($value);
 	}
 
 	public function getName(): string

@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes;
+namespace GrandMedia\DoctrineTypes\Money;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Money\Currency;
