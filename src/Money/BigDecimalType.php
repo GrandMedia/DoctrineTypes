@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes\BrickMoney;
+namespace GrandMedia\DoctrineTypes\Money;
 
 use Brick\Math\BigDecimal;
 use Doctrine\DBAL\Platforms\AbstractPlatform;

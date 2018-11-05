@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMediaTests\DoctrineTypes\BrickMoney;
+namespace GrandMediaTests\DoctrineTypes\Money;
 
 use Brick\Math\BigDecimal;
 use Doctrine\DBAL\Types\Type;
-use GrandMedia\DoctrineTypes\BrickMoney\BigDecimalType;
+use GrandMedia\DoctrineTypes\Money\BigDecimalType;
 use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Tester\Assert;
 

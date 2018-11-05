@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes\BrickMoney;
+namespace GrandMedia\DoctrineTypes\Money;
 
-final class Mapping
+final class MoneyMapping
 {
 
 	public const FOLDER = __DIR__;

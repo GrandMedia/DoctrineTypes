@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMediaTests\DoctrineTypes\BrickMoney;
+namespace GrandMediaTests\DoctrineTypes\Money;
 
 use Brick\Money\Currency;
 use Doctrine\DBAL\Types\Type;
-use GrandMedia\DoctrineTypes\BrickMoney\CurrencyType;
+use GrandMedia\DoctrineTypes\Money\CurrencyType;
 use GrandMediaTests\DoctrineTypes\Mocks\Platform;
 use Tester\Assert;
 

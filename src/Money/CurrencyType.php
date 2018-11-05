@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace GrandMedia\DoctrineTypes\BrickMoney;
+namespace GrandMedia\DoctrineTypes\Money;
 
 use Brick\Money\Currency;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
