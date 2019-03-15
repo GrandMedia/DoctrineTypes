@@ -6,7 +6,5 @@
 		<field name="id"/>
 		<field name="name"/>
 		<field name="namespace"/>
-		<field name="version"/>
-		<field name="public" type="boolean"/>
 	</embeddable>
 </doctrine-mapping>
