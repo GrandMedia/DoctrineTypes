@@ -20,7 +20,7 @@
 		"doctrine/dbal": "^2.5"
 	},
 	"require-dev": {
-		"brick/money": "^0.2.4",
+		"brick/money": "^0.4",
 		"grand-media/coding-standard": "^2.0",
 		"grand-media/vo": "^1.0",
 		"nette/tester": "^2.0",
