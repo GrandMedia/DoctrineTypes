@@ -5,18 +5,10 @@ namespace GrandMedia\DoctrineTypes\Money;
 use Brick\Math\BigDecimal;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
-final class BigDecimalType extends \Doctrine\DBAL\Types\Type
+final class BigDecimalType extends \Doctrine\DBAL\Types\StringType
 {
 
 	public const NAME = 'big_decimal';
-
-	/**
-	 * @param string[] $fieldDeclaration
-	 */
-	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
-	{
-		return $platform->getDecimalTypeDeclarationSQL($fieldDeclaration);
-	}
 
 	/**
 	 * @param mixed $value

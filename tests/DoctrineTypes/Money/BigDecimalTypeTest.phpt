@@ -22,7 +22,7 @@ final class BigDecimalTypeTest extends \Tester\TestCase
 	{
 		$type = Type::getType(BigDecimalType::NAME);
 
-		Assert::same('NUMERIC(10, 0)', $type->getSQLDeclaration([], new Platform()));
+		Assert::same('VARCHAR(255)', $type->getSQLDeclaration([], new Platform()));
 	}
 
 	public function testConvertToPhpValue(): void
