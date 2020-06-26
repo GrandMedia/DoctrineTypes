@@ -15,6 +15,11 @@ final class BigDecimalType extends \Doctrine\DBAL\Types\Type
 	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
 	{
+		$fieldDeclaration['precision'] = !isset($fieldDeclaration['precision']) || empty($fieldDeclaration['precision'])
+			? 20 : $fieldDeclaration['precision'];
+		$fieldDeclaration['scale'] = !isset($fieldDeclaration['scale']) || empty($fieldDeclaration['scale'])
+			? 4 : $fieldDeclaration['scale'];
+
 		return $platform->getDecimalTypeDeclarationSQL($fieldDeclaration);
 	}
 

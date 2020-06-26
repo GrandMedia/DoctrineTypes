@@ -16,13 +16,13 @@ require_once __DIR__ . '/../../bootstrap.php';
 final class BigDecimalTypeTest extends \Tester\TestCase
 {
 
-	private const NUMBER = '123456789';
+	private const NUMBER = '123456789.95';
 
 	public function testGetSQLDeclaration(): void
 	{
 		$type = Type::getType(BigDecimalType::NAME);
 
-		Assert::same('NUMERIC(10, 0)', $type->getSQLDeclaration([], new Platform()));
+		Assert::same('NUMERIC(20, 4)', $type->getSQLDeclaration([], new Platform()));
 	}
 
 	public function testConvertToPhpValue(): void
