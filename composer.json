@@ -16,14 +16,15 @@
 		"sort-packages": true
 	},
 	"require": {
-		"php": ">=7.1",
-		"doctrine/dbal": "^2.5"
+		"php": ">=7.4",
+		"nette/di": "^3.0",
+		"nettrine/orm": "^0.7"
 	},
 	"require-dev": {
 		"brick/money": "^0.4",
-		"grand-media/coding-standard": "^2.0",
+		"grand-media/coding-standard": "^3.0",
 		"grand-media/vo": "^1.0",
-		"nette/tester": "^2.0",
+		"nette/tester": "^2.3",
 		"phpstan/phpstan": "^0.12"
 	},
 	"autoload": {

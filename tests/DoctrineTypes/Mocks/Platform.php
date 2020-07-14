@@ -71,7 +71,7 @@ final class Platform extends \Doctrine\DBAL\Platforms\AbstractPlatform
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 * @param int $length
 	 * @param bool $fixed
 	 */
