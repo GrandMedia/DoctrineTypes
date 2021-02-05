@@ -18,10 +18,10 @@
 	"require": {
 		"php": ">=7.4",
 		"nette/di": "^3.0",
-		"nettrine/orm": "^0.7"
+		"nettrine/orm": "^0.8"
 	},
 	"require-dev": {
-		"brick/money": "^0.4",
+		"brick/money": "^0.5",
 		"grand-media/coding-standard": "^3.0",
 		"grand-media/vo": "^1.0",
 		"nette/tester": "^2.3",
